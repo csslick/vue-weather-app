@@ -1,7 +1,7 @@
 <script setup>
   import { onMounted } from 'vue'; 
   import { useStore } from 'vuex'; // vuex에서 store 가져옴
-  import Navbar from './components/navbar.vue';
+  import Navbar from './components/Navbar.vue';
   import Main from './components/Main.vue';
 
   const store = useStore(); // store 초기화
