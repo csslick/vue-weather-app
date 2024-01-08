@@ -1,9 +1,7 @@
 <template>
   <div class="container">
-    <SearchBar 
-      @onSearchCity="onSearchCity" 
-    />
-    <WeatherInfo :weather="props.weather" />
+    <SearchBar />
+    <WeatherInfo />
   </div>
 </template>
   
@@ -11,15 +9,15 @@
   import SearchBar from './SearchBar.vue';
   import WeatherInfo from './WeatherInfo.vue';
 
-  const props = defineProps({
-    weather: Object,
-  })
-  const emits = defineEmits(['onSearchCity'])
+  // const props = defineProps({
+  //   weather: Object,
+  // })
+  // const emits = defineEmits(['onSearchCity'])
 
-  function onSearchCity(city) {
-    console.log('main: ', city);
-    emits('onSearchCity', city);
-  }
+  // function onSearchCity(city) {
+  //   console.log('main: ', city);
+  //   emits('onSearchCity', city);
+  // }
   
 </script>
   

@@ -5,9 +5,15 @@
         <input 
           @input="inputText = $event.target.value"
           type="search" placeholder="지역을 입력해 주세요">
-        <button @click="onSearchCity">
+        <button 
+          @click="
+            $store.commit('changeCity', inputText);
+            $store.dispatch('getWeather');
+          "
+          >
           <font-awesome-icon class="icon" icon="magnifying-glass" />
         </button>
+        <!-- <p>{{ $store.state.city }}</p> -->
       </div>
     </form>
   </div>
@@ -17,12 +23,12 @@
   import { ref, onUpdated } from 'vue';
   
   const inputText = ref('seoul');
-  const emits = defineEmits(['onSearchCity']);
+  // const emits = defineEmits(['onSearchCity']);
 
-  function onSearchCity() {
-    console.log('click 전송', inputText.value)
-    emits('onSearchCity', inputText.value);
-  }
+  // function onSearchCity() {
+  //   console.log('click 전송', inputText.value)
+  //   emits('onSearchCity', inputText.value);
+  // }
 
 </script>
 
