@@ -1,9 +1,11 @@
 <template>
   <div class="search-bar">
-    <form>
+    <form @submit.prevent>
       <div class="form-group">
-        <input type="search" placeholder="지역을 입력해 주세요">
-        <button>
+        <input 
+          @input="inputText = $event.target.value"
+          type="search" placeholder="지역을 입력해 주세요">
+        <button @click="onSearchCity">
           <font-awesome-icon class="icon" icon="magnifying-glass" />
         </button>
       </div>
@@ -12,6 +14,15 @@
 </template>
 
 <script setup>
+  import { ref, onUpdated } from 'vue';
+  
+  const inputText = ref('seoul');
+  const emits = defineEmits(['onSearchCity']);
+
+  function onSearchCity() {
+    console.log('click 전송', inputText.value)
+    emits('onSearchCity', inputText.value);
+  }
 
 </script>
 
@@ -22,6 +33,7 @@
     background: #fff;
     border: 1px solid #ccc;
     padding: 0 20px;
+    color: #333;
   
     form {
       .form-group {
