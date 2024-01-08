@@ -1,8 +1,9 @@
 <template>
   <div class="container">
-    <SearchBar />
+    <SearchBar 
+      @onSearchCity="onSearchCity" 
+    />
     <WeatherInfo :weather="props.weather" />
-    <!-- <p>{{ props.weather.temp }}</p> -->
   </div>
 </template>
   
@@ -13,6 +14,12 @@
   const props = defineProps({
     weather: Object,
   })
+  const emits = defineEmits(['onSearchCity'])
+
+  function onSearchCity(city) {
+    console.log('main: ', city);
+    emits('onSearchCity', city);
+  }
   
 </script>
   
