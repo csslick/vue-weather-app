@@ -27,9 +27,15 @@
     & > div {
       margin-bottom: 20px;
       padding: 20px;
-      border: 1px solid #ccc;
+      // border: 1px solid #ccc;
+    }
+    .icon img {
+      width: 140px;
     }
     .temp {
+      font-size: 4em;
+    }
+    .text {
       font-size: 2em;
     }
   }
