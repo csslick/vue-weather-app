@@ -2,7 +2,8 @@
   import { onMounted } from 'vue'; 
   import { useStore } from 'vuex'; // vuex에서 store 가져옴
   import Navbar from './components/Navbar.vue';
-  import Main from './components/Main.vue';
+  import MainComp from './components/Main.vue';
+  import About from './components/About.vue';
 
   const store = useStore(); // store 초기화
 
@@ -16,10 +17,17 @@
 
 <template>
   <Navbar />
-  <Main />
+  <!-- $store.state.toggle이 false이면 Main 컴포넌트를 보여줌 -->
+  <Transition name="slide-fade">
+    <div v-if="$store.state.toggle">
+        <About />
+    </div>
+    <div v-else>
+      <MainComp />
+    </div>
+  </Transition>
 </template>
 
 <style scoped>
-
 
 </style>

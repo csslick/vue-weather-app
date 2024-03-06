@@ -11,6 +11,7 @@ export default createStore({
       city: 'city',
     },
     city: 'Seoul', // API에 요청하는 지역명(검색 요청마다 변경됨)
+    toggle: false, // 토글 버튼 상태
   },
   mutations: {
     changeCity (state, payload) {
@@ -22,7 +23,10 @@ export default createStore({
       state.weather.text = payload.weather[0].description;
       state.weather.location = payload.sys.country;
       state.weather.city = payload.name;
-    }
+    },
+    toggleButton (state) { // 토글 버튼
+      state.toggle =!state.toggle;
+    },
   },
   actions: {
     // 액션(actions)
