@@ -9,12 +9,11 @@
   </main>    
 </template>
   
-<script setup>
-  
-</script>
-  
 <style scoped lang="scss">
-  main {
+  main {  
+    height: calc(100vh - 66px);
+    background: #fff;
+    padding: 20px;
     p {
       margin: 0 0 10px 0 ;
     }
