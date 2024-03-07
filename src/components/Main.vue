@@ -24,5 +24,7 @@
 <style scoped lang="scss">
   .container {
     padding: 20px;
+    background: #fff;
+    height: calc(100vh - 66px);
   }
 </style>

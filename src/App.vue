@@ -18,14 +18,12 @@
 <template>
   <Navbar />
   <!-- $store.state.toggle이 false이면 Main 컴포넌트를 보여줌 -->
-  <Transition name="slide-fade">
     <div v-if="$store.state.toggle">
-        <About />
+      <About />
     </div>
     <div v-else>
       <MainComp />
     </div>
-  </Transition>
 </template>
 
 <style scoped>

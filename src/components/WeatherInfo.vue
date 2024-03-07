@@ -8,6 +8,7 @@
       <div class="temp">{{ ($store.state.weather.temp - 273.15).toFixed(1) }}&deg;</div>
       <div class="text">{{ $store.state.weather.text }}</div>
       <div class="location">
+        <i class='bx bx-map'></i>
         {{ $store.state.weather.city }},
         {{ $store.state.weather.location }}
       </div>
